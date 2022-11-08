@@ -1,5 +1,6 @@
 package com.dezhentech.a.controller;
 
+import com.dezhentech.common.security.annotation.RequiresRoles;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.Data;
@@ -31,6 +32,7 @@ public class ConfigController {
      */
     @ApiOperation("测试动态获取配置信息")
     @GetMapping("/config")
+    @RequiresRoles("teacher")
     public String config() {
         return name;
     }

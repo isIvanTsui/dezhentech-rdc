@@ -14,6 +14,7 @@
     <modules>
         <module>rdc-service-a</module>
         <module>rdc-service-b</module>
+        <module>rdc-service-system</module>
     </modules>
 
 

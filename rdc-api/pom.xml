@@ -14,6 +14,15 @@
     <modules>
         <module>rdc-api-service-a</module>
         <module>rdc-api-service-b</module>
+        <module>rdc-api-system</module>
     </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.dezhentech</groupId>
+            <artifactId>rdc-common-core</artifactId>
+            <version>1.0.2022.10</version>
+        </dependency>
+    </dependencies>
 
 </project>

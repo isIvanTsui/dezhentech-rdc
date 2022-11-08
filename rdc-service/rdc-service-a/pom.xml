@@ -18,11 +18,30 @@
             <version>1.0.2022.10</version>
         </dependency>
 
+        <!--引入权限切面控制权限-->
+        <dependency>
+            <groupId>com.dezhentech</groupId>
+            <artifactId>rdc-common-security</artifactId>
+            <version>1.0.2022.10</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-loadbalancer</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
         <!-- 接口文档的依赖 -->
         <dependency>
             <groupId>com.github.xiaoymin</groupId>
             <artifactId>knife4j-micro-spring-boot-starter</artifactId>
-            <version>3.0.3</version>
         </dependency>
 
         <!--引入validation依赖-->
@@ -42,7 +61,6 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-zipkin</artifactId>
-            <version>2.2.8.RELEASE</version>
         </dependency>
 
 
@@ -56,7 +74,6 @@
         <dependency>
             <groupId>de.codecentric</groupId>
             <artifactId>spring-boot-admin-starter-client</artifactId>
-            <version>2.6.9</version>
         </dependency>
         <!--健康检测包，为SpringCloudAdmin提供检测信息-->
         <!--开放所有接口，收集所有信息，提供给rdc-admin监控-->

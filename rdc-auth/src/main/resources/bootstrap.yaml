@@ -1,0 +1,53 @@
+server:
+  port: 10010
+spring:
+  mvc:
+    pathmatch:
+      #Springboot2.6以后将SpringMVC 默认路径匹配策略从AntPathMatcher 更改为PathPatternParser，我们这里为了适配swagger2，所以改回去了
+      matching-strategy: ANT_PATH_MATCHER
+  application:
+    name: rdc-auth
+  cloud:
+    nacos:
+      discovery:
+        username: nacos
+        password: nacos
+        server-addr: 127.0.0.1:8848
+        namespace: public
+      #配置config中心
+      config:
+        enabled: true
+        server-addr: 127.0.0.1:8848
+        file-extension: yaml
+        username: nacos
+        password: nacos
+    #服务降级
+    sentinel:
+      transport:
+        dashboard: 127.0.0.1:8080
+  boot:
+    admin:
+      client:
+        url: http://localhost:8100  #配置rdc-admin的地址
+  #链路追踪
+  zipkin:
+    base-url: http://localhost:9411
+  redis:
+    host: localhost
+    port: 6379
+  profiles:
+    active: dev
+#暴露端点
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+#OpenFeign对Sentinel整合
+feign:
+  sentinel:
+    enabled: true

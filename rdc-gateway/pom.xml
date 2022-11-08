@@ -12,6 +12,17 @@
     <artifactId>rdc-gateway</artifactId>
 
     <dependencies>
+        <dependency>
+            <groupId>com.dezhentech</groupId>
+            <artifactId>rdc-common-core</artifactId>
+            <version>1.0.2022.10</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.dezhentech</groupId>
+            <artifactId>rdc-common.redis</artifactId>
+            <version>1.0.2022.10</version>
+        </dependency>
 
         <!--流控-->
         <dependency>

@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    dynamic:
+      datasource:
+        # 主库数据源
+        master:
+          url: jdbc:mysql://localhost:3306/dezhen_auth?user=root&password=&useUnicode=true&characterEncoding=utf8&autoReconnect=true&failOverReadOnly=false
+          username: root
+          password: cui09876
+
+mybatis-plus:
+  #executor-type: REUSE
+  mapper-locations: classpath*:mapper/**/*Mapper.xml
+  #实体扫描，多个package用逗号或者分号分隔
+  typeAliasesPackage: com.dezhentech.system,com.dezhentech.test
+  global-config:
+    #数据库类型
+    db-type: mysql
+    db-config:
+      id-type: auto
