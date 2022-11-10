@@ -6,7 +6,7 @@ spring:
         master:
           url: jdbc:mysql://localhost:3306/dezhen_auth?user=root&password=&useUnicode=true&characterEncoding=utf8&autoReconnect=true&failOverReadOnly=false
           username: root
-          password: cui09876
+          password: root
 
 mybatis-plus:
   #executor-type: REUSE

@@ -92,6 +92,12 @@
         <artifactId>spring-cloud-starter-zipkin</artifactId>
     </dependency>
 
+    <!--分布式事务-->
+    <dependency>
+        <groupId>com.alibaba.cloud</groupId>
+        <artifactId>spring-cloud-starter-alibaba-seata</artifactId>
+    </dependency>
+
 
     <!-- nacos 服务注册发现（客户端）依赖 -->
     <dependency>

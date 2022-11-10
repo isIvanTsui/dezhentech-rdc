@@ -32,8 +32,6 @@
         <!--组件依赖-->
         <spring.boot.admin.version>2.6.9</spring.boot.admin.version>
         <zipkin.version>2.2.8.RELEASE</zipkin.version>
-        <nacos.version>2.0.4</nacos.version>
-        <seata.version>1.5.2</seata.version>
         <!--其他依赖-->
         <redisson.version>3.17.1</redisson.version>
         <druid.version>1.2.9</druid.version>
@@ -83,6 +81,8 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
+            <!--组件依赖-->
             <!--SpringCloudAdmin-->
             <!--服务端依赖-->
             <dependency>
@@ -102,12 +102,6 @@
                 <artifactId>spring-cloud-starter-zipkin</artifactId>
                 <version>${zipkin.version}</version>
             </dependency>
-            <!--分布式事务seata-->
-            <dependency>
-                <groupId>io.seata</groupId>
-                <artifactId>seata-spring-boot-starter</artifactId>
-                <version>${seata.version}</version>
-            </dependency>
 
             <!--次要依赖-->
             <!--Redisson-->
@@ -116,7 +110,6 @@
                 <artifactId>redisson-spring-boot-starter</artifactId>
                 <version>${redisson.version}</version>
             </dependency>
-
             <!--MyBatisPlus-->
             <dependency>
                 <groupId>com.baomidou</groupId>

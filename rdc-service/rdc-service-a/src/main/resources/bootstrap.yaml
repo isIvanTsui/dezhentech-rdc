@@ -1,10 +1,18 @@
 server:
-  port: 8091
+  port: 8093
 spring:
   mvc:
     pathmatch:
       #Springboot2.6以后将SpringMVC 默认路径匹配策略从AntPathMatcher 更改为PathPatternParser，我们这里为了适配swagger2，所以改回去了
       matching-strategy: ANT_PATH_MATCHER
+  datasource:
+    dynamic:
+      datasource:
+        # 主库数据源
+        master:
+          url: jdbc:mysql://localhost:3306/dezhen_auth?user=root&password=&useUnicode=true&characterEncoding=utf8&autoReconnect=true&failOverReadOnly=false
+          username: root
+          password: root
   application:
     name: rdc-service-a
   cloud:
@@ -32,6 +40,7 @@ spring:
   #链路追踪
   zipkin:
     base-url: http://localhost:9411
+    enabled: false
   profiles:
     active: dev
 #暴露端点
@@ -49,6 +58,26 @@ feign:
   sentinel:
     enabled: true
 
+mybatis-plus:
+  #executor-type: REUSE
+  mapper-locations: classpath*:mapper/**/*Mapper.xml
+  #实体扫描，多个package用逗号或者分号分隔
+  typeAliasesPackage: com.dezhentech.a,com.dezhentech.b
+  global-config:
+    #数据库类型
+    db-type: mysql
+    db-config:
+      id-type: auto
+seata:
+  tx-service-group: default_tx_group # 事务组名称，要和服务端对应
+  service:
+    vgroup-mapping:
+      default_tx_group: default # key是事务组名称 value要和服务端的机房名称保持一致
+    grouplist:
+      default: 127.0.0.1:8091
+
 #自定义属性
 test:
   name: "测试数据"
+
+
