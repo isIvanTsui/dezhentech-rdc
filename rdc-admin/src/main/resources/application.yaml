@@ -10,3 +10,28 @@ spring:
         password: nacos
         server-addr: 127.0.0.1:8848
         namespace: public
+  security:
+    user:
+      name: admin
+      password: admin
+  mail:
+    host: smtp.qq.com
+    username: yfcui@foxmail.com
+    #授权码
+    password: lxrtplnigiljtbejf
+  boot:
+    admin:
+      notify:
+        mail:
+          #to和from都要配置，否则发送邮件时会报错
+          to: XXXXX@qq.com
+          from: XXXXX@qq.com
+#暴露端点
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: '*'

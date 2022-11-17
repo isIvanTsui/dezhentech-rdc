@@ -24,6 +24,26 @@
             <artifactId>spring-boot-admin-starter-server</artifactId>
             <version>2.6.9</version>
         </dependency>
+        <!-- 加入密码认证 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <!--健康检测包，为SpringCloudAdmin提供检测信息-->
+        <!--开放所有接口，收集所有信息，提供给rdc-admin监控-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <!--邮件通知-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-mail</artifactId>
+        </dependency>
 
     </dependencies>
 

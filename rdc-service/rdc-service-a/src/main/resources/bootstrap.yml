@@ -1,0 +1,67 @@
+feign:
+    sentinel:
+        enabled: true
+management:
+    endpoint:
+        health:
+            show-details: always
+    endpoints:
+        web:
+            exposure:
+                include: '*'
+mybatis-plus:
+    global-config:
+        db-config:
+            id-type: auto
+        db-type: mysql
+    mapper-locations: classpath*:mapper/**/*Mapper.xml
+    typeAliasesPackage: com.dezhentech.a,com.dezhentech.b
+seata:
+    service:
+        grouplist:
+            default: 127.0.0.1:8091
+        vgroup-mapping:
+            default_tx_group: default
+    tx-service-group: default_tx_group
+server:
+    port: 8093
+spring:
+    application:
+        name: rdc-service-a
+    boot:
+        admin:
+            client:
+                url: http://localhost:8100
+    cloud:
+        nacos:
+            config:
+                enabled: true
+                file-extension: yaml
+                password: nacos
+                server-addr: 127.0.0.1:8848
+                username: nacos
+            discovery:
+                namespace: public
+                password: nacos
+                server-addr: 127.0.0.1:8848
+                username: nacos
+        sentinel:
+            transport:
+                dashboard: 127.0.0.1:8080
+    datasource:
+        dynamic:
+            datasource:
+                master:
+                    password: root
+                    url: jdbc:mysql://localhost:3306/dezhen_auth?user=root&password=&useUnicode=true&characterEncoding=utf8&autoReconnect=true&failOverReadOnly=false
+                    username: root
+    mvc:
+        pathmatch:
+            matching-strategy: ANT_PATH_MATCHER
+    profiles:
+        active: dev
+    zipkin:
+        base-url: http://localhost:9411
+        enabled: false
+test:
+    name: 测试数据

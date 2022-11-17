@@ -22,16 +22,27 @@ spring:
         password: nacos
         server-addr: 127.0.0.1:8848
         namespace: public
+        enabled: false
+      #配置config中心
+      config:
+        enabled: false
+        server-addr: 127.0.0.1:8848
+        file-extension: yaml
+        username: nacos
+        password: nacos
     sentinel:
       transport:
         dashboard: 127.0.0.1:8080
+      enabled: false
   boot:
     admin:
       client:
         url: http://localhost:8100  #配置rdc-admin的地址
+        enabled: false
   zipkin:
     base-url: http://localhost:9411
     enabled: false
+
   profiles:
     active: dev
 #OpenFeign对Sentinel整合
@@ -68,3 +79,4 @@ seata:
       default_tx_group: default # key是事务组名称 value要和服务端的机房名称保持一致
     grouplist:
       default: 127.0.0.1:8091
+  enabled: true
